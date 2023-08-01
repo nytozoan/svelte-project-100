@@ -1,5 +1,5 @@
 <style>
-    main {
+    #main {
         height:936px;
         width: 612px;
         margin-left: auto;
@@ -8,4 +8,4 @@
     }
 </style>
 
-<main contenteditable="true"></main>
+<div id="main" contenteditable="true"></div>
