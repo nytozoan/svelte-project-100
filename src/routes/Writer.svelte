@@ -38,6 +38,14 @@
         width: calc(var(--rulerThickness) - 20px);
         margin: 10px;
     }
+    #character-counter {
+        background: green;
+        height: 75px;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
 </style>
 <!-- Vertical select divs are set as IDs in case I want to add a few things on the left-hand and right-hand (with a third select div) side later. -->
 <div id="writer-horizontal-select-div">
@@ -49,14 +57,19 @@
         <div id="top-ruler"></div>
         <main contenteditable="true" id="writer-main" bind:textContent={textCount} bind:innerHTML={innerHTMLContent} on:keypress={() => textCounter()}></main>
     </div>
+    <div id="character-counter">
+        <p>Chars: {charCounterValue}</p>
+    </div>
 </div>
 
 <script>
     let textCount
     let innerHTMLContent
+    let charCounterValue = 0
 
     const textCounter = () => {
         console.log("Character count:", textCount.length + 1)
+        charCounterValue = textCount.length + 1
         if (textCount.length > 33) save()
     }
 
