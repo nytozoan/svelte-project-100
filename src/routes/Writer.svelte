@@ -2,7 +2,7 @@
     :root {
         --pageLength: 936px;
         --pageWidth: 612px;
-        --rulerThickness: 20px;
+        --rulerThickness: 50px;
     }
     #writer-horizontal-select-div {
         display: flex;
@@ -16,7 +16,6 @@
     #writer-vertical-select-div-2 {
         display: flex;
         flex-direction: column;
-        margin-left: auto;
         margin-right: auto;
     }
     main {
@@ -35,8 +34,9 @@
         background: violet;
     }
     #margin-neutral-button {
-        height: var(--rulerThickness);
-        width: var(--rulerThickness);
+        height: calc(var(--rulerThickness) - 20px);
+        width: calc(var(--rulerThickness) - 20px);
+        margin: 10px;
     }
 </style>
 <!-- Vertical select divs are set as IDs in case I want to add a few things on the left-hand and right-hand (with a third select div) side later. -->
@@ -47,6 +47,20 @@
     </div>
     <div id="writer-vertical-select-div-2">
         <div id="top-ruler"></div>
-        <main contenteditable="true"></main>
+        <main contenteditable="true" id="writer-main" bind:textContent={textCount} bind:innerHTML={innerHTMLContent} on:keypress={() => textCounter()}></main>
     </div>
 </div>
+
+<script>
+    let textCount
+    let innerHTMLContent
+
+    const textCounter = () => {
+        console.log("Character count:", textCount.length)
+        if (textCount.length > 33) save()
+    }
+
+    const save = () => {
+        console.log(innerHTMLContent)
+    }
+</script>

@@ -1,21 +1,3 @@
-<script>
-    let fileDisplay = "none"
-    let optionsDisplay = "none"
-    let pluginsDisplay = "none"
-    let helpDisplay = "none"
-
-    const showNavFileSublist = (dropdown) => {
-        if (dropdown == "flex") return "none"
-        else if (dropdown == "none") {
-            fileDisplay = "none"
-            optionsDisplay = "none"
-            pluginsDisplay = "none"
-            helpDisplay = "none"
-            return "flex"
-        }
-    }
-</script>
-
 <style>
     #main {
         background: red;
@@ -85,3 +67,21 @@
         </ul>
     </div>
 </div>
+
+<script>
+    let fileDisplay = "none"
+    let optionsDisplay = "none"
+    let pluginsDisplay = "none"
+    let helpDisplay = "none"
+
+    const showNavFileSublist = (dropdown) => {
+        if (dropdown == "flex") return "none"
+        else if (dropdown == "none") {
+            fileDisplay = "none"
+            optionsDisplay = "none"
+            pluginsDisplay = "none"
+            helpDisplay = "none"
+            return "flex"
+        }
+    }
+</script>

@@ -17,7 +17,6 @@
 
 <div id="main">
     <ul>
-        <li>Placeholders</li>
         <li><button id="tray-bold" on:click={() => bold()}>B</button></li>
         <li><button id="tray-italicize" on:click={() => italicize()}>I</button></li>
         <li><button id="tray-underline" on:click={() => underline()}>U</button></li>
