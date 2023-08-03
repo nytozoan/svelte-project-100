@@ -56,7 +56,7 @@
     let innerHTMLContent
 
     const textCounter = () => {
-        console.log("Character count:", textCount.length)
+        console.log("Character count:", textCount.length + 1)
         if (textCount.length > 33) save()
     }
 
