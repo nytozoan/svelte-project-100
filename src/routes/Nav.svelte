@@ -35,7 +35,7 @@
 <div id="main">
     <geek />
     <div>
-        <h1 contenteditable="true">Your Document's Title Here</h1>
+        <h1 contenteditable="true" id="documentTitle" bind:innerHTML={documentTitle}></h1>
     </div>
     <div>
         <ul id="nav-mainlist">
@@ -84,4 +84,6 @@
             return "flex"
         }
     }
+
+    export let documentTitle = "Your Document's Title Here"
 </script>
