@@ -95,31 +95,59 @@
     let charCounterValue = 0
 
     const textCounter = () => {
-        console.log("Character count:", textCount.length + 1)
+        // console.log("Character count:", textCount.length + 1)
         charCounterValue = textCount.length + 1
     }
     const save = () => {
-        console.log(innerHTMLContent)
+        console.log(textCount)
+    }
+
+    
+    const getCursor = () => {
+        return window.getSelection().focusOffset
+        // console.log("\nGet Selection:", x)
+        // console.log("Text Count Current:", Array.from(textDataArray)[x-1])
+        // console.log("Text Count Array:", Array.from(textCount))
     }
     
     let boldState = 0
     const bold = () => {
-        if (boldState == 0) boldState = 1
+        if (boldState == 0) {
+            boldState = 1
+            let x = Array.from(textCount)
+            let y = x.splice(0, getCursor())
+            y.push("****")
+            y.push(x.join(""))
+            innerHTMLContent = y.join("")
+        }
         else if (boldState == 1) boldState = 0
         console.log("boldState:", boldState)
     }
     let italicizeState = 0
     const italicize = () => {
-        if (italicizeState == 0) italicizeState = 1
-        else if (italicizeState == 1) italicizeState = 0
+        if (italicizeState == 0) {
+            italicizeState = 1
+            let x = Array.from(textCount)
+            let y = x.splice(0, getCursor())
+            y.push("**")
+            y.push(x.join(""))
+            innerHTMLContent = y.join("")
+        }
         console.log("italicizeState:", italicizeState)
     }
     let underlineState = 0
     const underline = () => {
-        if (underlineState == 0) underlineState = 1
-        else if (underlineState == 1) underlineState = 0
-        console.log("underlineState:", underlineState)
+        if (underlineState == 0) {
+            underlineState = 1
+            let x = Array.from(textCount)
+            let y = x.splice(0, getCursor())
+            y.push("__")
+            y.push(x.join(""))
+            innerHTMLContent = y.join("")
+        }
+        console.log("underlineState", underlineState)
     }
+    
 //Experimental area
     let pagePaddingLeftValue = 50
     let pagePaddingLeft = pagePaddingLeftValue.toString() + "px"
@@ -130,8 +158,8 @@
     let pagePaddingBottomValue = 50;
     let pagePaddingBottom = pagePaddingBottomValue.toString() + "px"
 
-    const asd = () => {
-        save()
+    export const asd = () => {
+        getCursor()
         // pagePaddingLeftValue += 50
         // pagePaddingLeft = pagePaddingLeftValue.toString() + "px"
         // console.log(pagePaddingLeft)

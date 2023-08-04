@@ -1,12 +1,10 @@
 <script>
     import Nav from "./Nav.svelte"
-    import Tray from "./Tray.svelte"
     import Writer from "./Writer.svelte"
 
+    let textData
     
-    console.log(Nav.documentTitle)
 </script>
 
 <Nav />
-<Tray />
 <Writer />
