@@ -159,7 +159,7 @@
     let pagePaddingBottom = pagePaddingBottomValue.toString() + "px"
 
     export const asd = () => {
-        getCursor()
+        console.log(textCount)
         // pagePaddingLeftValue += 50
         // pagePaddingLeft = pagePaddingLeftValue.toString() + "px"
         // console.log(pagePaddingLeft)

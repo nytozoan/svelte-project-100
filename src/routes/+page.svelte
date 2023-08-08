@@ -1,10 +1,8 @@
 <script>
     import Nav from "./Nav.svelte"
-    import Writer from "./Writer.svelte"
+    import asd from "./options.js"
 
-    let textData
-    
+    console.log()
 </script>
 
 <Nav />
-<Writer />
